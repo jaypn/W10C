@@ -19,18 +19,18 @@ else if(userSelection == 'Raygon'){
 
     }
 
-    var selectscore = document.createElement("h5");
-var compscore = document.createElement("h5");
+    //var selectscore = document.createElement("h5");
+//var compscore = document.createElement("h5");
 
-selectscore.innerHTML= selectcurrenthealth + "/" + selectmaximum;
-selectscore.setAttribute("id","select-container");
+//selectscore.innerHTML= selectcurrenthealth + "/" + selectmaximum;
+//selectscore.setAttribute("id","select-container");
 
-selecthtml.appendChild(selectscore);
+//selecthtml.appendChild(selectscore);
 
-compscore.innerHTML= compcurrent_health + "/" + compmaximum;
-compscore.setAttribute("id","opponent-container");
+//compscore.innerHTML= compcurrent_health + "/" + compmaximum;
+//compscore.setAttribute("id","opponent-container");
 
-comphtml.appendChild(compscore);
+//comphtml.appendChild(compscore);
 
 
 
@@ -52,6 +52,17 @@ comphtml.appendChild(compscore);
         maximum:Cookies.get("compmaximum")
     }
 
+    function score(){
+        var body = document.getElementById("body")
+        if(compPokemonHP.innerHTML <= 0) {
+        
+            document.getElementById("body").innerHTML = "<p> Congrats You are the winner!!! </p>";
+        } else if(selectPokemonHP.innerHTML<=0){
+            document.getElementById("body").innerHTML= "<p> Sorry Gameover!!! </p>"; 
+        }
+    }
+
+
 
     
 
@@ -61,71 +72,42 @@ comphtml.appendChild(compscore);
     function punching(){
         compPokemonHP.innerHTML = compPokemonHP.innerHTML -10; 
         selectPokemonHP.innerHTML = selectPokemonHP.innerHTML - 2;
+
+        score();
         
 
         
     
-    function score(){
-        var body = document.getElementById("body")
-        if(compPokemonHP <= 0) {
-        
-            document.getElementById("body").innerHTML = "<p> Congrats You are the winner!!! </p>";
-        } else if(selectPokemonHP<=0){
-            document.getElementById("body").innerHTML= "<p> Sorry Gameover!!! </p>"; 
-        }
-
+    
     }
-    }
+    
 
     function attack(){
         compPokemonHP.innerHTML = compPokemonHP.innerHTML -10;
         selectPokemonHP.innerHTML = selectPokemonHP.innerHTML -15;
+        score();
         
     }
-    function score(){
-        var body = document.getElementById("body")
-        if(compPokemonHP <= 0) {
-        
-            document.getElementById("body").innerHTML = "<p> Congrats You are the winner!!! </p>";
-        } else if(selectPokemonHP<=0){
-            document.getElementById("body").innerHTML= "<p> Sorry Gameover!!! </p>"; 
-        }
+    
 
-    }
+    
 
 
     function guard(){
         compPokemonHP.innerHTML = compPokemonHP.innerHTML -10;
         selectPokemonHP.innerHTML = selectPokemonHP.innerHTML -15;
+        score();
         
     }
-    function score(){
-        var body = document.getElementById("body")
-        if(compPokemonHP <= 0) {
-        
-            document.getElementById("body").innerHTML = "<p> Congrats You are the winner!!! </p>";
-        } else if(selectPokemonHP<=0){
-            document.getElementById("body").innerHTML= "<p> Sorry Gameover!!! </p>"; 
-        }
-
-    }
-
+    
+    
     function boxing(){
         compPokemonHP.innerHTML = compPokemonHP.innerHTML -10;
         selectPokemonHP.innerHTML = selectPokemonHP.innerHTML -2; 
+        score();
         
     }
-    function score(){
-        var body = document.getElementById("body")
-        if(compPokemonHP <= 0) {
-        
-            document.getElementById("body").innerHTML = "<p> Congrats You are the winner!!! </p>";
-        } else if(selectPokemonHP<=0){
-            document.getElementById("body").innerHTML= "<p> Sorry Gameover!!! </p>"; 
-        }
-
-    }
-
+    
 
 
 
